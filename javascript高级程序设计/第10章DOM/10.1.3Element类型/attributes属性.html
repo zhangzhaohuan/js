@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>attributes属性</title>
+</head>
+
+<body>
+  <div id="d1" name='name-d1'>1234</div>
+  <script>
+    var element1 = document.getElementById('d1');
+    var namedNodeMap1 = element1.attributes;
+    console.log(namedNodeMap1);
+
+    console.log(namedNodeMap1.getNamedItem('name'));
+    console.log(namedNodeMap1.getNamedItem('id'));
+
+
+    console.log(namedNodeMap1.removeNamedItem('name'));
+    console.log(namedNodeMap1);
+    console.log(element1);
+
+
+    var nodeattr1 = document.createAttribute('class');
+    nodeattr1.nodeValue = 'class-d1';
+    namedNodeMap1.setNamedItem(nodeattr1);
+    console.log(namedNodeMap1);
+
+
+    console.log(namedNodeMap1.item(0));
+    
+
+
+
+  </script>
+</body>
+
+</html>

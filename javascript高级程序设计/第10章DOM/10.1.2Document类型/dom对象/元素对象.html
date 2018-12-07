@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>元素对象</title>
+</head>
+
+<body>
+  <div class="test1" name='name-test1'>test1</div>
+  <div class="test2">
+    <div class="test2-1">test2-1</div>
+    <div class="test2-2">test2-2</div>
+  </div>
+  <div class="test3">test3</div>
+  <div class="test4">test4</div>
+  <div class="test5">test5</div>
+  <script>
+    /*
+    child和childNodes区别
+    childNodes 属性返回所有的节点，包括文本节点、注释节点；空格等
+    children 属性只返回元素节点；
+    */
+    var children = document.body.children;
+    console.log(children[1]);
+    var childNodes = document.body.childNodes;
+
+
+    /*
+      firstChild、lastChild 节点
+    */
+    console.log(document.body.firstChild);
+    console.log(document.body.lastChild);
+
+
+    /*上一个、下一个兄弟节点 */
+    var test2Element = document.getElementsByClassName('test2')[0];
+    console.log(document.getElementsByName('name-test1'));  //NodeList
+    console.log(test2Element.nextSibling);
+    console.log(test2Element.previousSibling);
+
+
+    /*Document类型*/
+    console.log(document.documentElement);
+
+    /*HTMLCollection和NodeList*/
+    var HTMLCollection = document.getElementsByTagName('div');  //HTMLCollection
+    console.log(HTMLCollection);
+    console.log(HTMLCollection.length);
+    console.log(HTMLCollection.item(1));
+    console.log(HTMLCollection.namedItem('name-test1'));
+    /*NodeList*/
+    var NodeList = document.getElementsByName('name-test1');  //NodeList
+    /*区别：前者可能既能用名称索引也能用数字索引*/
+
+  </script>
+</body>
+
+</html>

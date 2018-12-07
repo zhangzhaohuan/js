@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .element1 {
+      color: red;
+    }
+
+    .element1-1 {
+      color: yellow;
+    }
+
+    .test3 {
+      color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="test1">test1</div>
+  <span class="test2">test2</span>
+  <div id="test3">test3</div>
+</body>
+<script>
+  var test1 = document.getElementsByClassName('test1')[0];
+  var test2 = document.getElementsByClassName('test2')[0];
+
+
+
+  console.log(test1.nodeName);
+  console.log(test2.nodeName);
+
+  console.log(test1.nodeValue);
+  console.log(test2.nodeValue);
+
+  var element1 = document.createElement('div');
+  var attribute = document.createAttribute('class');
+  var textNode1 = document.createTextNode('textNode1');
+
+  /* nodeType: 元素、属性、文本 ：1、2、3*/
+  console.log('nodeType:');
+  console.log(element1.nodeType);
+  console.log(attribute.nodeType);
+  console.log(textNode1.nodeType);
+
+  /* nodeName */
+  console.log('nodeName:');
+  console.log(element1.nodeName);
+  console.log(attribute.nodeName);
+  console.log(textNode1.nodeName);
+  
+  attribute.value = 'element1';
+  /* nodeValue*/
+  console.log('nodeValue:');
+  console.log(element1.nodeValue);  //null或undefined
+  console.log(attribute.nodeValue); // 属性值
+  console.log(textNode1.nodeValue); // 文本本身
+
+  var body = document.body;
+  element1.setAttributeNode(attribute);
+  element1.setAttribute('class', 'element1-1');
+  element1.appendChild(textNode1);
+  body.appendChild(element1);
+
+</script>
+
+</html>

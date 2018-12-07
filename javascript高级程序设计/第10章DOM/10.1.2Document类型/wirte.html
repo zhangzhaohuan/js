@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>document.write() Example</title>
+</head>
+<style>
+  #d1 {
+    font-size: 20px;
+  }
+</style>
+
+<body>
+  <div>
+    <div id='d1' style='color: brown;background: cadetblue'>123</div>
+    <div>456</div>
+  </div>
+  <script>
+    var element1 = document.getElementById('d1');
+    console.log(element1.style);
+    console.log(element1.getAttribute('style'));
+
+  </script>
+</body>
+
+</html>

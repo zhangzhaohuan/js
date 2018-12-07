@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+      例子1
+    */
+    var book = {};
+    Object.defineProperties(book, {
+      _year: {
+        value: 2004
+      },
+      editon: {
+        value: 1
+      },
+      year: {
+        get: function () {
+          return this._year;
+        },
+        set: function (newValue) {
+          if (newValue > 2004) {
+            this._year = newValue;
+            this.editon += newValue - 2004;
+          }
+        }
+      }
+    })
+    // var descriptor = Object.getOwnPropertyDescriptor(book, '_year');
+    var descriptor = Object.getOwnPropertyDescriptor(book, 'year');
+    console.log(descriptor);
+    console.log(book);
+    book._year = 2005;
+    console.log(book._year);
+
+
+    /*
+      例子2
+    */
+
+    var dictionary2 = {
+      year: 2005,
+      name: '新华字典'
+    }
+    var descriptor2 = Object.getOwnPropertyDescriptor(dictionary2, 'year');
+
+    console.log(descriptor2);
+
+
+
+  </script>
+</body>
+
+</html>
