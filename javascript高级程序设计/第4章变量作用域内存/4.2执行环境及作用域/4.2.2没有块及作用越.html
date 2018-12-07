@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
   <script>
-      var aa = 'aa';
-      function parent(){
-        var bb = 'bb';
-        function father(){
-          var cc = 'cc';
-          name = 'name';
-          console.log(cc);
-        }
-        father();
+    var aa = 'aa';
+    function parent() {
+      var bb = 'bb';
+      function father() {
+        var cc = 'cc';
+        name = 'name';
+        console.log(cc);
       }
-      parent();
-      console.log(name);
+      father();
+    }
+    parent();
+    console.log(name);
 
-    
-    </script>
+    var color = 'blue';
+    function changColor() {
+      if (color == 'blue') {
+        color = 'red';
+      } else {
+        color = 'blue';
+      }
+    }
+    changColor();
+    alert('color is now ' + color);
+
+    function createComparisonFunction(propertyName) {
+      return function (object1, object2) {
+        var value1 = object1[propertyName];
+        var value2= object2[propertyName];
+        if (value1<value2) {
+          return -1;
+        }else if(value1>value2){
+          return 1;
+        }else{
+          return 0;
+        }
+      }
+    }
+    //创建函数
+    var compareNames = createComparisonFunction('name');
+    //调用函数
+    var result = compareNames({name:'张三'},{name:'李四'});
+  </script>
 </body>
+
 </html>
