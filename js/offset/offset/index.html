@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>offset</title>
+  <style>
+    .parent1 {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border: 1px solid #eee;
+      padding: 20px;
+      background: #ddd;
+    }
+
+    .child1 {
+      background: red;
+    }
+
+    .child2 {
+      width: 300px;
+      height: 200px;
+      overflow: scroll;
+    }
+
+    .child2- {
+      width: 100px;
+      height: 60px;
+      background: #eee;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='parent1'>
+    <div class="child1">
+      <div class="sunzi">sunzi</div>
+    </div>
+    <div class="child2">
+      <div class="child2-">1</div>
+      <div class="child2-">2</div>
+      <div class="child2-">3</div>
+      <div class="child2-">4</div>
+    </div>
+  </div>
+  <script>
+    var parent1 = document.getElementsByClassName('parent1')[0];
+    var child1 = document.getElementsByClassName('child1')[0];
+    var child2 = document.getElementsByClassName('child2')[0];
+
+    console.log(parent1);
+    //offsetWidth 、offsetHeight  返回元素的实际宽、高度
+    console.log('offsetWidth' + parent1.offsetWidth);   // content + padding + border  元素的实际宽度
+    console.log('offsetHeight' + parent1.offsetHeight);   // content + padding + border  元素的实际宽度
+    console.log('offsetWidth' + child1.offsetWidth);
+
+    console.log('offsetWidth:child2:' + child2.offsetWidth);
+    console.log('offsetHeight:child2:' + child2.offsetHeight);
+
+
+    //offsetLeft  \offsetTop 只读 返回元素外边框到定位父级元素【非固定定位】（若无定位父级元素，则为body）内边框的距离
+
+    console.log(parent1.offsetLeft);
+    console.log(parent1.offsetTop);
+    console.log(child1.offsetLeft);
+    console.log(child1.offsetTop);
+
+
+
+    //clientHeight 、clientWidth 只读
+    console.log(parent1.clientWidth);  //返回元素可见区域的宽度:content + padding
+    console.log(window.innerWidth);
+    console.log(document.documentElement.clientWidth);
+    console.log(document.body.clientWidth);
+    console.log('clientHeight:' + child2.clientHeight);
+
+
+
+    //scrollWidth 、scrollHeight 只读
+    console.log('scrollHeight:' + child2.scrollHeight);  //返回元素的高度[将scroll内容展开的高度] content+ padding
+
+
+    // scrollTop  、scrollLeft 读写
+    console.log('scrollTop:' + child2.scrollTop);
+    child2.scrollTop = '20';
+
+
+  </script>
+</body>
+
+</html>

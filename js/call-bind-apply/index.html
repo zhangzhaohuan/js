@@ -24,11 +24,8 @@
         var bindArgs = Array.prototype.slice.call(arguments);
         console.log(this instanceof fNOP);
         console.log(this instanceof fBound);
-
-
         self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));
       }
-
       fNOP.prototype = this.prototype;
       fBound.prototype = new fNOP();
       return fBound;
@@ -56,9 +53,9 @@
     // undefined
     // daisy
     // 18
-    console.log(obj.habit);
-    console.log(obj.friend);
- // shopping
+    console.log(obj.habit); // shopping
+    console.log(obj.friend);//kevin
+
 
 
 

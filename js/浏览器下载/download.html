@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>下载</title>
+</head>
+
+<body>
+  <div id="down">
+    <a id="downLoad">点我下载图片</a>
+  </div>
+</body>
+<script>
+
+  /**
+   * 下载文件（已知文件内容）
+   * @param  {String} fileName 文件名
+   * @param  {String} content  文件内容
+   */
+  function createAndDownloadFile(fileName, content) {
+    var aTag = document.createElement('a');
+    var blob = new Blob([content]);
+    aTag.download = fileName;
+    aTag.href = URL.createObjectURL(blob);
+    aTag.click();
+    URL.revokeObjectURL(blob);
+  }
+
+  /**
+   * 从服务器下载文件 （url）
+   * 注意：IE中要手动点击保存，才能下载
+  */
+  function createAndDownloadFile2(fileName, url) {
+    var aTag = document.createElement('a');
+    aTag.download = fileName;
+    aTag.href = url;
+    aTag.click();
+  }
+
+</script>
+
+</html>
