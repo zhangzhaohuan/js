@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 内联事件中的 this</title>
+</head>
+<script>
+  function clickbut() {
+    'use strict';
+    console.log(this);
+  }
+
+</script>
+
+<body>
+  <button id="but1" onclick="console.log(this)">dianji </button>
+  <button id="but2" onclick="(function(){console.log(this)})()">dianji </button>
+  <button id="but3" onclick="(function(){ 'use strict'; console.log(this)})()">dianji </button>
+  <button id="but4" onclick="clickbut()">dianji </button>
+
+</body>
+
+
+</html>

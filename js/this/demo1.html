@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM 事件处理函数中的 this</title>
+</head>
+
+<body>
+  <button id="but1">dianji </button>
+</body>
+<script>
+  function click(e) {
+    //在控制台打印出所点击元素
+    console.log(this);
+    //阻止时间冒泡
+    e.stopPropagation();
+    //阻止元素的默认事件
+    e.preventDefault();
+  }
+  var ele = document.getElementById('but1');
+  console.log(ele);
+  ele.addEventListener('click', click, false);
+</script>
+
+</html>
