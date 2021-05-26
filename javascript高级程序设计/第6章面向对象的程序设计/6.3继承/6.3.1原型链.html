@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function SuperType(){
+            this.colors = ['red','blue'];
+        }
+
+        function SubType(){
+        }
+        
+        SubType.prototype = new SuperType();
+        console.log(SuperType.prototype.constructor);
+
+        console.log(SubType.prototype.constructor);
+        var super1 = new SuperType();
+        super1.colors.push('yellow');
+        console.log(super1.colors)
+        var super2 = new SuperType()
+        console.log(super2.colors);
+
+
+        var instance1 = new SubType();
+        instance1.colors.push('yellow');
+        console.log(instance1.colors);
+
+        var instance2 = new SubType();
+        console.log(instance2.colors);
+      
+
+
+    </script>
+</body>
+</html>

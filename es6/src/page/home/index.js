@@ -8,8 +8,14 @@ export default class Home extends Component {
                 <ul>
                     <li>
                         <Link to='/map'>map和set数据结构</Link>
-
                     </li>
+                    <li>
+                        <Link to='/promise'>promise</Link>
+                    </li>
+                    <li>
+                        <Link to='/reflect'>reflect</Link>
+                    </li>
+
                 </ul>
             </div>
         )

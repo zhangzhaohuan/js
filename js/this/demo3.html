@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = 'name1'; 
+        var obj = {
+            name:'name2',
+            props:{
+                name:'name3',
+                getvalue:function(){
+                    return this.name
+                }
+            }
+        }
+        console.log(obj.props.getvalue());
+        var aa = obj.props.getvalue;
+        console.log(aa());
+    </script>
+</body>
+</html>

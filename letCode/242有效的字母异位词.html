@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    /**
+     * @param {string} s
+     * @param {string} t
+     * @return {boolean}
+     */
+    var isAnagram = function (s, t) {
+      var s1 = s.split('');
+      var t1 = t.split('');
+      var length1 = s1.length;
+      var length2 = t1.length;
+      if (length1 != length2) {
+        return false;
+      }
+
+      var o1 = {};
+      for (let i = 0; i < length1; i++) {
+        let val1 = o1[s[i]] || 0;
+        o1[s1[i]] = val1 + 1;
+        let val2 = o1[t1[i]]|| 0;
+        o1[t1[i]] = val2 - 1;
+      }
+
+      for (let i in o1) {
+        if (o1[i]) return false
+      }
+      return true;
+    };
+
+
+    isAnagram("anagram",
+"nagaram");
+  </script>
+</body>
+
+</html>

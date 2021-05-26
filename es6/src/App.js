@@ -8,6 +8,11 @@ import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom'
 import logo from './logo.svg';
 import Home from './page/home'
 import MapPage from './page/map';
+import PromiseDemo from './page/promise';
+import MyPromiseDemo from './page/promise/MyPromise/index';
+
+import ReflectDemo from './page/reflect';
+
 
 class App extends Component {
   render() {
@@ -17,6 +22,9 @@ class App extends Component {
           <div>
             <Switch>
               <Route path='/map' component={MapPage} />
+              <Route path='/promise' component={PromiseDemo} />
+              <Route path='/mypromise' component={MyPromiseDemo} />
+              <Route path='/reflect' component={ReflectDemo} />
               <Route path='/' component={Home} />
             </Switch>
           </div>
