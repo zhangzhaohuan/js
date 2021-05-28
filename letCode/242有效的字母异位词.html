@@ -9,7 +9,39 @@
 
 <body>
   <script>
+// 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+/**
+ * 
+ * 示例 1:
+ * 输入: s = "anagram", t = "nagaram"
+ * 输出: true
+ * 
+ * 示例 2:
+ * 输入: s = "rat", t = "car"
+ * 输出: false
+ * 
+ * 
+ * 说明:
+    你可以假设字符串只包含小写字母。
+ * 
+ * 进阶:
+如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+ * 
 
+
+ /*
+    思路：t 是 s 的异位词等价于「两个字符串排序后相等」
+ */
+
+// 方法一
+  
+ var isAnagram1 = function (s, t) {
+   return s.length == t.length && [...s].sort().join('') === [...t].sort().join('')
+ }
+
+
+
+// 方法二
     /**
      * @param {string} s
      * @param {string} t
@@ -26,7 +58,7 @@
 
       var o1 = {};
       for (let i = 0; i < length1; i++) {
-        let val1 = o1[s[i]] || 0;
+        let val1 = o1[s1[i]] || 0;
         o1[s1[i]] = val1 + 1;
         let val2 = o1[t1[i]]|| 0;
         o1[t1[i]] = val2 - 1;
@@ -41,6 +73,8 @@
 
     isAnagram("anagram",
 "nagaram");
+
+
   </script>
 </body>
 
