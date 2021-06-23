@@ -1,8 +1,8 @@
-function Mypromise(handel){
+function Mypromise(handle){
     
 
 
-    handel(resolve.bind(this),reject.bind(this));
+    handle(resolve.bind(this),reject.bind(this));
     this._status='PENDING';
     this._val = null;
    
@@ -14,7 +14,6 @@ function Mypromise(handel){
 function resolve(val){
     this._status = 'FULLFILLED';
     this._val = val;
-    console.log(val)
 }
 function reject(err){
     this._status = 'REJECT';
@@ -87,4 +86,7 @@ function then (onFulfilled, onRejected) {
   })
 }
 
-  
+
+
+
+

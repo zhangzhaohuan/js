@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+
+    let promise1 = new Promise(function (resolve, reject) {
+      reject('promise1');
+    }).catch(function(err) {
+      console.log(err);
+    })
+    let promise2 = new Promise(function (resolve, reject) {
+      reject('promise2');
+    }).catch(function(err) {
+      console.log(err);
+    })
+    let promise3 = new Promise(function (resolve, reject) {
+      reject('promise3');
+    }).catch(function(err) {
+      console.log(err);
+    })
+
+
+    // Promise.all([promise1,promise2,promise3]).then(function ([...res]) {
+    //   console.log(res);
+    // }).catch(function (reason) {
+    //   console.log(reason);
+    // });
+
+
+
+    Promise.race([promise1,promise2,promise3]).then(function (res) {
+      console.log(res);
+    }).catch(function (reason) {
+      console.log(reason);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

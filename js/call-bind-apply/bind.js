@@ -19,7 +19,7 @@ Function.prototype.bind2 = function (context) {
 
 
 
-// 传递参数
+// step1: 传递参数
 Function.prototype.bind2 = function (context) {
  
   var self = this;
@@ -33,7 +33,7 @@ Function.prototype.bind2 = function (context) {
   }
 }
 
-//构造函数
+// step2:构造函数
 Function.prototype.bind2 = function (context) {
   var self = this;
   var args = Array.prototype.slice.call(arguments, 1);

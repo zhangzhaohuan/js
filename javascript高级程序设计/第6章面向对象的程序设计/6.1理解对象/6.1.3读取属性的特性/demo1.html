@@ -34,8 +34,9 @@
       }
     })
     // var descriptor = Object.getOwnPropertyDescriptor(book, '_year');
+    //console.log(descriptor); //{value: 2004, writable: false, enumerable: false, configurable: false}
     var descriptor = Object.getOwnPropertyDescriptor(book, 'year');
-    console.log(descriptor);
+    console.log(descriptor);  //{enumerable: false, configurable: false, get: ƒ, set: ƒ}
     console.log(book);
     book._year = 2005;
     console.log(book._year);
@@ -52,7 +53,7 @@
     var descriptor2 = Object.getOwnPropertyDescriptor(dictionary2, 'year');
 
     console.log(descriptor2);
-
+// {value: 2005, writable: true, enumerable: true, configurable: true}
 
 
   </script>
